@@ -9,13 +9,5 @@ type PortfolioEntry = {
 };
 
 export async function getPortfolioEntries(): Promise<Array<PortfolioEntry>> {
-  return [
-    {
-      title: "My First Portfolio Entry",
-      workScope: "Personal",
-      imageUrl: "",
-      url: "",
-      descriptionMd: "This is a description",
-    },
-  ];
+  return await prisma.portfolioEntry.findMany();
 }
