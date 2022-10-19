@@ -25,6 +25,7 @@ model Password {
 }
 
 model PortfolioEntry {
+  id    String @id @default(cuid())
   title String @unique
   workScope String
   imageUrl String
